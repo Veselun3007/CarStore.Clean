@@ -44,12 +44,7 @@ The solution is structured according to `Clean Architecture principles` and cons
 
 Contains the core business entities and logic. For demonstration purposes, four simple entities were created with basic relationships:
 
-```plaintext
-Dealer 1 ────< Car >──── 1 Sale >──── 1 User
-             |               |
-             |               v
-             +──────────── Car
-```
+![image](https://github.com/user-attachments/assets/ef38fe1a-6550-4d0d-83c4-d9a8b7f2aa2d)
 
 > [!NOTE]
 > The data model is simplified for testing and demonstration. It is not intended for production use.
