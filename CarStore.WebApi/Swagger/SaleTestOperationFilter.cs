@@ -22,14 +22,14 @@ namespace CarStore.Clean.WebApi.Swagger
                 case nameof(SaleController.Create):
                     var examplesAdd = new Dictionary<string, IOpenApiAny>
                     {
-                        ["Add sale"] = ToOpenApiValue(TestDataFactory.CreateCar())
+                        ["Add sale"] = ToOpenApiValue(TestDataFactory.CreateSale())
                     };
                     ApplyExamples(operation.RequestBody, examplesAdd);
                     break;
                 case nameof(SaleController.Update):
                     var examplesEdit = new Dictionary<string, IOpenApiAny>
                     {
-                        ["Edit sale"] = ToOpenApiValue(TestDataFactory.UpdateCar())
+                        ["Edit sale"] = ToOpenApiValue(TestDataFactory.UpdateSale())
                     };
                     ApplyExamples(operation.RequestBody, examplesEdit);
                     break;

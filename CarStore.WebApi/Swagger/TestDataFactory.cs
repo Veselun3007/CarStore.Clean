@@ -56,7 +56,7 @@ namespace CarStore.Clean.WebApi.Swagger
                 SaleDate = DateTime.UtcNow,
                 FinalPrice = 34000m,
                 CarId = 1,
-                UserId = "user123"
+                UserId = "set from get allUser"
             };
         }
 
@@ -67,7 +67,7 @@ namespace CarStore.Clean.WebApi.Swagger
                 SaleDate = DateTime.UtcNow,
                 FinalPrice = 38000m,
                 CarId = 1,
-                UserId = "user123"
+                UserId = "set from get allUser"
             };
         }
 
