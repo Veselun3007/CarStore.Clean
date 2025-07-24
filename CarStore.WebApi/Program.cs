@@ -40,8 +40,8 @@ namespace CarStore.WebApi
                 dbContext.Database.Migrate();
             }
 
+            app.UseExceptionHandler();
             app.UseHttpsRedirection();
-            app.UseAuthorization();
 
             app.MapControllers();
             app.Run();
