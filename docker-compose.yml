@@ -1,23 +1,21 @@
-version: '3.9'
-
 services:
   api:
-    container_name: carstore_api
+    container_name: carstore_clean_api
     build:
       context: .
-      dockerfile: CarStore.WebApi/Dockerfile
+      dockerfile: CarStore.Clean.WebApi/Dockerfile
     ports:
       - "8080:8080"
       - "8081:8081"
     environment:
       ASPNETCORE_ENVIRONMENT: Development
-      ConnectionStrings__DefaultConnection: Host=db;Port=5432;Database=carstore_db;Username=postgres;Password=password;
+      ConnectionStrings__DefaultConnection: Host=carstore_clean_db;Port=5432;Database=carstore_db;Username=postgres;Password=password;
     depends_on:
-      db:
+      carstore_clean_db:
         condition: service_healthy
     restart: on-failure
 
-  db:
+  carstore_clean_db:
     container_name: carstore_db
     image: postgres:16
     restart: always
@@ -28,7 +26,7 @@ services:
     ports:
       - "5435:5432" 
     volumes:
-      - carstore_pgdata:/var/lib/postgresql/data
+      - carstore_clean:/var/lib/postgresql/data
     healthcheck:
       test: ["CMD", "pg_isready", "-U", "postgres"]
       interval: 5s
@@ -36,4 +34,4 @@ services:
       retries: 5
 
 volumes:
-  carstore_pgdata:
+  carstore_clean:
