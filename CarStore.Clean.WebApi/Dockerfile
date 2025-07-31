@@ -8,9 +8,9 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 
 COPY ["CarStore.Clean.WebApi/CarStore.Clean.WebApi.csproj", "CarStore.Clean.WebApi/"]
-COPY ["CarStore.Clean.Infrastructure/CarStore.Clean.Infrastructure.csproj", "CarStore.Clean.Infrastructure/"]
 COPY ["CarStore.Clean.Application/CarStore.Clean.Application.csproj", "CarStore.Clean.Application/"]
 COPY ["CarStore.Clean.Domain/CarStore.Clean.Domain.csproj", "CarStore.Clean.Domain/"]
+COPY ["CarStore.Clean.Infrastructure/CarStore.Clean.Infrastructure.csproj", "CarStore.Clean.Infrastructure/"]
 RUN dotnet restore "CarStore.Clean.WebApi/CarStore.Clean.WebApi.csproj"
 
 COPY . .
