@@ -17,7 +17,7 @@ namespace CarStore.Clean.WebApi.Swagger
 
         public void Apply(OpenApiOperation operation, OperationFilterContext context)
         {
-            var controllerName = context.MethodInfo.DeclaringType?.Name?.Replace("Controller", "");
+            var controllerName = context.ApiDescription.ActionDescriptor.RouteValues["controller"];
             var methodName = context.MethodInfo.Name;
 
             var factoryType = typeof(TestDataFactory);

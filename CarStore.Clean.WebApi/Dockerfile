@@ -1,8 +1,7 @@
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
-USER $APP_UID
 WORKDIR /app
-EXPOSE 80
-EXPOSE 443
+EXPOSE 8080
+EXPOSE 8081
 
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
@@ -26,7 +25,6 @@ COPY --from=build /src /src
 
 ENV PATH="${PATH}:/root/.dotnet/tools"
 RUN dotnet tool install --global dotnet-ef
-
 
 CMD dotnet ef database update \
     --project /src/CarStore.Clean.Infrastructure \
